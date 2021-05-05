@@ -1,0 +1,106 @@
+[
+    {
+        "function": "minecraft:copy_nbt",
+        "source": {
+            "type": "minecraft:storage",
+            "source": "gnottero:isotope"
+        },
+        "ops": [
+            {
+                "source": "TempInv[0].tag.ctc.tool.damage",
+                "target": "ctc.tool.damage",
+                "op": "replace"
+            },
+            {
+                "source": "TempInv[0].tag.display.Lore",
+                "target": "display.Lore",
+                "op": "replace"
+            },
+            {
+                "source": "TempInv[0].tag.hasEmptyLore",
+                "target": "hasEmptyLore",
+                "op": "replace"
+            }
+        ]
+    },
+    {
+        "function": "minecraft:set_lore",
+        "entity": "this",
+        "lore": [
+            [
+                {
+                    "text": "Durability: ",
+                    "color": "gray",
+                    "italic": false
+                },
+                {
+                    "score": {
+                        "name": "#gn.remaining_durability",
+                        "objective": "gn.tool_info"
+                    }
+                },
+                {
+                    "text": "/"
+                },
+                {
+                    "score": {
+                        "name": "#gn.tool_durability",
+                        "objective": "gn.tool_info"
+                    }
+                }
+            ]
+        ]
+    },
+    {
+        "function": "minecraft:set_damage",
+        "conditions": [
+            {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "player": {
+                        "advancements": {
+                            "gnottero:isotope/utils/prevent_last_use": false
+                        }
+                    }
+                }
+            }
+        ],
+        "damage": {
+            "type": "minecraft:score",
+            "target": {
+                "type": "minecraft:fixed",
+                "name": "#gn.display_durability"
+            },
+            "score": "gn.tool_info",
+            "scale": 0.01
+        }
+    },
+    {
+        "function": "minecraft:copy_nbt",
+        "conditions": [
+            {
+                "condition": "minecraft:entity_properties",
+                "entity": "this",
+                "predicate": {
+                    "player": {
+                        "advancements": {
+                            "gnottero:isotope/utils/prevent_last_use": true
+                        }
+                    }
+                }
+            }
+        ],
+        "source": {
+            "type": "minecraft:storage",
+            "source": "gnottero:isotope"
+        },
+        "ops": [
+            {
+                "source": "TempInv[0].tag.ToolDamage",
+                "target": "Damage",
+                "op": "replace"
+            }
+        ]
+    }
+]

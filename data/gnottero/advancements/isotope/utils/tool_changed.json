@@ -1,0 +1,17 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "nbt": "{ctc:{tool:{}}}"
+                    }
+                ]
+            }
+        }
+    },
+    "rewards": {
+        "function": "gnottero:isotope/events/tools/main"
+    }
+}

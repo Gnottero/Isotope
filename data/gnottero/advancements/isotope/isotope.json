@@ -1,0 +1,17 @@
+{
+     "criteria": {
+          "trigger": {
+               "trigger": "minecraft:tick"
+          }
+     },
+     "display": {
+          "announce_to_chat": false,
+          "description": "A custom durability library by Gnottero",
+          "icon": {
+               "item": "minecraft:iron_pickaxe"
+          },
+          "show_toast": false,
+          "title": "Isotope"
+     },
+     "parent": "global:gnottero"
+}

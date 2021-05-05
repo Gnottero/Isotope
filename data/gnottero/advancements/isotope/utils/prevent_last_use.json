@@ -1,0 +1,24 @@
+{
+    "criteria": {
+        "requirement": {
+            "trigger": "minecraft:item_durability_changed",
+            "conditions": {
+                "player": [
+                    {
+                        "condition": "minecraft:value_check",
+                        "value": {
+                            "type": "minecraft:score",
+                            "target": {
+                                "type": "minecraft:fixed",
+                                "name": "#gn.generate_broken_item"
+                            },
+                            "score": "gn.tool_info"
+                        },
+                        "range": 1
+                    }
+                ],
+                "durability": 1
+            }
+        }
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "function": "minecraft:copy_nbt",
+    "source": {
+        "type": "minecraft:storage",
+        "source": "gnottero:isotope"
+    },
+    "ops": [
+        {
+            "source": "TempInv[0].tag",
+            "target": "{}",
+            "op": "merge"
+        }
+    ]
+}
+
