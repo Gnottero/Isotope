@@ -7,6 +7,18 @@
                     {
                         "nbt": "{ctc:{tool:{}}}"
                     }
+                ],
+                "player": [
+                    {
+                        "condition": "minecraft:inverted",
+                        "term": {
+                            "condition": "minecraft:entity_properties",
+                            "entity": "this",
+                            "predicate": {
+                                "nbt": "{Tags:[\"global.ignore\"]}"
+                            }
+                        }
+                    }
                 ]
             }
         }

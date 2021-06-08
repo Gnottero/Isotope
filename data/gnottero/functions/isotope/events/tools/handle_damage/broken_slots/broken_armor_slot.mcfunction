@@ -11,7 +11,7 @@
         tag @e[type=minecraft:item, limit=1, sort=nearest, tag=gn.broken_placeholder, nbt={Item:{id:"minecraft:clock"}}] remove gn.broken_placeholder
 
     #> Remove the item from the Inventory Slot
-        execute if score #gn.tool_slot gn.tool_info matches 100 run item entity @s armor.feet replace minecraft:air
-        execute if score #gn.tool_slot gn.tool_info matches 101 run item entity @s armor.legs replace minecraft:air
-        execute if score #gn.tool_slot gn.tool_info matches 102 run item entity @s armor.chest replace minecraft:air
-        execute if score #gn.tool_slot gn.tool_info matches 103 run item entity @s armor.head replace minecraft:air
+        execute if score #gn.tool_slot gn.tool_info matches 100 run item replace entity @s armor.feet with minecraft:air
+        execute if score #gn.tool_slot gn.tool_info matches 101 run item replace entity @s armor.legs with minecraft:air
+        execute if score #gn.tool_slot gn.tool_info matches 102 run item replace entity @s armor.chest with minecraft:air
+        execute if score #gn.tool_slot gn.tool_info matches 103 run item replace entity @s armor.head with minecraft:air

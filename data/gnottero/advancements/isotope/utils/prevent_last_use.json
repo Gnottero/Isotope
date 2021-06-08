@@ -15,6 +15,16 @@
                             "score": "gn.tool_info"
                         },
                         "range": 1
+                    },
+                    {
+                      "condition": "minecraft:inverted",
+                      "term": {
+                          "condition": "minecraft:entity_properties",
+                          "entity": "this",
+                          "predicate": {
+                              "nbt": "{Tags:[\"global.ignore\"]}"
+                          }
+                      }
                     }
                 ],
                 "durability": 1

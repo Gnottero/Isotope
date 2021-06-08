@@ -4,7 +4,7 @@
         forceload remove -30000000 1600
         forceload add -30000000 1600
 
-    #> Place an oak wall sign to get item names 
+    #> Place an oak wall sign to get item names
         execute unless block -30000000 0 1603 minecraft:oak_wall_sign run setblock -30000000 0 1603 minecraft:oak_wall_sign[facing=south]
 
     #> Initialize all the needed scoreboards
