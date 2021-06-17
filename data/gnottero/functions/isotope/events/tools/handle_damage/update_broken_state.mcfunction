@@ -1,24 +1,8 @@
 #> Replace the real tool with a clock and set the "broken" tag to 1b
     #> Called by the "gnottero:isotope/events/tools/handle_damage/calc_damage" function
 
-    #> Set the broken state to the tool
-        data modify storage gnottero:isotope TempInv[0].tag.ctc.tool.broken set value 1b
-
-    #> Replace the last line of the lore
-        data modify storage gnottero:isotope TempInv[0].tag.display.Lore[-1] set value '{"text": "Broken", "color": "red", "italic": false}'
-
-    #> Change the values of the "Damage" and "ToolDamage" tags and set them to 0
-        data modify storage gnottero:isotope TempInv[0].tag.Damage set value 0
-        data modify storage gnottero:isotope TempInv[0].tag.ToolDamage set value 0
-
-    #> Set the value of the "ToolItem" tag
-        data modify storage gnottero:isotope TempInv[0].tag.ToolItem set from storage gnottero:isotope TempInv[0].id
-
-    #> Store the gametime in the "TempInv[0].tag.UniqueIdentifier" tag
-        execute store result storage gnottero:isotope TempInv[0].tag.UniqueIdentifier long 1 run time query gametime 
-
-    #> Call the "" function if the item doesn't have a custom name
-        execute unless data storage gnottero:isotope TempInv[0].tag.display.Name run function gnottero:isotope/events/tools/handle_damage/get_name_string
+    #> Call the "" function if the value of the "#gn.generate_broken_item" fake player matches 1
+        execute if score #gn.generate_broken_item gn.tool_info matches 1 run function gnottero:isotope/events/tools/handle_damage/get_broken_item_data
 
     #> Call the right function based on the scoreboard value of the "#gn.tool_slot" fake player
         execute if score #gn.tool_slot gn.tool_info matches 0 run function gnottero:isotope/events/tools/handle_damage/broken_slots/broken_slot_0
