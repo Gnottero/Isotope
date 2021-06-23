@@ -15,5 +15,5 @@
         scoreboard players set #gn.tool_durability_constant gn.tool_info 100
 
     #> Initialize all the configs
-        scoreboard players set #gn.generate_broken_item gn.tool_info 1
+        scoreboard players set #gn.generate_broken_item gn.tool_info 0
         scoreboard players set #gn.send_debug_message gn.tool_info 0
