@@ -5,7 +5,7 @@
         summon minecraft:item -30000000 0 1603 {Item:{id:"minecraft:stone", Count:1b}, Tags:["gn.string_placeholder"]}
 
     #> Replace placeholder id with the value inside the "TempInv" storage
-        data modify entity @e[type=minecraft:item, limit=1, x=-30000000, y=0, z=1603, dx=0, dy=0, dz=0, tag=gn.string_placeholder] Item.id set from storage gnottero:isotope TempInv[0].id
+        data modify entity @e[type=minecraft:item, limit=1, x=-30000000, y=0, z=1603, dx=0, dy=0, dz=0, tag=gn.string_placeholder] Item.id set from storage gnottero:isotope TempInv[0].tag.ToolItem
 
     #> Replace the oak wall sign with a new one
         setblock -30000000 0 1603 minecraft:air 

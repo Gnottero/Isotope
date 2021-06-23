@@ -1,31 +1,24 @@
 [
     {
-        "function": "minecraft:copy_nbt",
-        "source": {
-            "type": "minecraft:storage",
-            "source": "gnottero:isotope"
-        },
-        "ops": [
-            {
-                "source": "TempInv[0].tag.ctc.tool.damage",
-                "target": "ctc.tool.damage",
-                "op": "replace"
-            },
-            {
-                "source": "TempInv[0].tag.display.Lore",
-                "target": "display.Lore",
-                "op": "replace"
-            },
-            {
-                "source": "TempInv[0].tag.hasEmptyLore",
-                "target": "hasEmptyLore",
-                "op": "replace"
-            }
-        ]
-    },
-    {
         "function": "minecraft:set_lore",
         "entity": "this",
+        "conditions": [
+            {
+                "condition": "minecraft:inverted",
+                "term": {
+                    "condition": "minecraft:value_check",
+                    "value": {
+                        "type": "minecraft:score",
+                        "target": {
+                            "type": "minecraft:fixed",
+                            "name": "#gn.remaining_durability"
+                        },
+                        "score": "gn.tool_info"
+                    },
+                    "range": 0
+                }
+            }
+        ],
         "lore": [
             [
                 {

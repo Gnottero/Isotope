@@ -12,6 +12,9 @@
     #> Store the custom damage in the "TempInv" storage
         execute store result storage gnottero:isotope TempInv[0].tag.ctc.tool.damage int 1 run scoreboard players get #gn.custom_tool_damage gn.tool_info
 
+    #> Set the "Slot" tag of the item to 0 (first slot of the inventory)
+        data modify storage gnottero:isotope TempInv[0].Slot set value 0b
+
     #> Based on the damage value, call the right function
         execute if score #gn.custom_tool_damage gn.tool_info < #gn.tool_durability gn.tool_info run function gnottero:isotope/events/tools/handle_damage/update_durability
         execute if score #gn.custom_tool_damage gn.tool_info >= #gn.tool_durability gn.tool_info run function gnottero:isotope/events/tools/handle_damage/update_broken_state
